@@ -1,12 +1,12 @@
 package com.hongpn.projects.OrangeHRM.pages;
 
-import com.hongpn.commons.WebUI;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AdminPage extends Menu {
-    private WebDriver driver;
-    private WebUI helper;
+
+
     // Element for Dashboard Page
     //menu
     private final By adminMenu = By.xpath("//ul[@class='oxd-main-menu']//span[normalize-space()='Admin']");
@@ -26,9 +26,5 @@ public class AdminPage extends Menu {
     private  final String urlDashboard="/dashboard";
     //Header Page
     private final By headerPage=By.xpath("//h6[normalize-space()='Dashboard']");
-    public AdminPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        helper = new WebUI(driver);
-    }
+
 }

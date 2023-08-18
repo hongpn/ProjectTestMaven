@@ -1,4 +1,4 @@
-package com.hongpn.tools;
+package com.hongpn.helpers;
 
 import net.datafaker.Faker;
 
@@ -9,7 +9,7 @@ public class DataFakerHelpers {
 
     public static String LOCATE ;
     public static Faker createFaker() {
-        PropertiesHelpers.setPropertiesFile();
+        //PropertiesHelpers.setPropertiesFile();
         faker = new Faker(new Locale(LOCATE));
         return faker;
     }

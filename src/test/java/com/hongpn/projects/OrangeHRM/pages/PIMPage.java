@@ -1,6 +1,8 @@
 package com.hongpn.projects.OrangeHRM.pages;
 
-import com.hongpn.commons.WebUI;
+
+import com.hongpn.drivers.DriverManager;
+import com.hongpn.helpers.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,8 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.time.Duration;
 
 public class PIMPage extends Menu{
-    private WebDriver driver;
-    private WebUI helper;
+
     // Element for Dashboard Page
 
     // Internal Element
@@ -36,25 +37,21 @@ public class PIMPage extends Menu{
     private WebElement lbElement;
     private WebElement chosenElement;
     Actions actions;
-    public PIMPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        helper = new WebUI(driver);
-        setParameters(headerPage,urlPIM,"PIM");
-    }
+
 
     public void ClickToJobTitle() throws InterruptedException {
-        helper.waitForJQueryLoaded();
-        helper.clickElement(jobTitleDrop);
+        WebDriver driver=DriverManager.getDriver();
+        WebUI.waitForPageLoaded();
+        WebUI.clickElement(jobTitleDrop);
         Thread.sleep(2000);
         actions=new Actions(driver);
         //actions.sendKeys(Keys.ARROW_DOWN).build().perform();
         //actions.sendKeys(Keys.ENTER).build().perform();
-        if(helper.checkExistElement(contextDrop)) {
+        if(WebUI.checkElementExist(contextDrop)) {
             lbElement = driver.findElement(contextDrop);
             String innerHTML= lbElement.getAttribute("innerHTML");
             System.out.println(innerHTML);
-            if(helper.checkExistElement(chiefExecutiveValue))
+            if(WebUI.checkElementExist(chiefExecutiveValue))
             {
                 chosenElement= driver.findElement(chiefExecutiveValue);
                 actions.moveToElement(chosenElement).pause(Duration.ofSeconds(1)).click(chosenElement).build().perform();
@@ -67,17 +64,18 @@ public class PIMPage extends Menu{
             System.out.println("Can not get list item in JobTitle");
     }
     public void ClickToElementStatus() throws InterruptedException {
-        helper.waitForJQueryLoaded();
-        helper.clickElement(empStatusDrop);
+        WebDriver driver=DriverManager.getDriver();
+        WebUI.waitForPageLoaded();
+        WebUI.clickElement(empStatusDrop);
         Thread.sleep(2000);
         actions=new Actions(driver);
         //actions.sendKeys(Keys.ARROW_DOWN).build().perform();
         //actions.sendKeys(Keys.ENTER).build().perform();
-        if(helper.checkExistElement(contextDrop)) {
+        if(WebUI.checkElementExist(contextDrop)) {
             lbElement = driver.findElement(contextDrop);
             String innerHTML= lbElement.getAttribute("innerHTML");
             System.out.println(innerHTML);
-            if(helper.checkExistElement(fullTimeValue))
+            if(WebUI.checkElementExist(fullTimeValue))
             {
                 chosenElement= driver.findElement(fullTimeValue);
                 actions.moveToElement(chosenElement).pause(Duration.ofSeconds(1)).click(chosenElement).build().perform();
@@ -90,17 +88,18 @@ public class PIMPage extends Menu{
             System.out.println("Can not get list item in Employment status");
     }
     public void ClickToSubUnit() throws InterruptedException {
-        helper.waitForJQueryLoaded();
-        helper.clickElement(subUnitDrop);
+        WebDriver driver=DriverManager.getDriver();
+        WebUI.waitForPageLoaded();
+        WebUI.clickElement(subUnitDrop);
         Thread.sleep(2000);
         actions=new Actions(driver);
         //actions.sendKeys(Keys.ARROW_DOWN).build().perform();
         //actions.sendKeys(Keys.ENTER).build().perform();
-        if(helper.checkExistElement(contextDrop)) {
+        if(WebUI.checkElementExist(contextDrop)) {
             lbElement = driver.findElement(contextDrop);
             String innerHTML= lbElement.getAttribute("innerHTML");
             System.out.println(innerHTML);
-            if(helper.checkExistElement(financeValue))
+            if(WebUI.checkElementExist(financeValue))
             {
                 chosenElement= driver.findElement(financeValue);
                 actions.moveToElement(chosenElement).pause(Duration.ofSeconds(1)).click(chosenElement).build().perform();
@@ -113,17 +112,18 @@ public class PIMPage extends Menu{
             System.out.println("Can not get list item in Sub Unit");
     }
     public void ClickToInclude() throws InterruptedException {
-        helper.waitForJQueryLoaded();
-        helper.clickElement(includeDrop);
+        WebDriver driver=DriverManager.getDriver();
+        WebUI.waitForPageLoaded();
+        WebUI.clickElement(includeDrop);
         Thread.sleep(2000);
         actions=new Actions(driver);
         //actions.sendKeys(Keys.ARROW_DOWN).build().perform();
         //actions.sendKeys(Keys.ENTER).build().perform();
-        if(helper.checkExistElement(contextDrop)) {
+        if(WebUI.checkElementExist(contextDrop)) {
             lbElement = driver.findElement(contextDrop);
             String innerHTML= lbElement.getAttribute("innerHTML");
             System.out.println(innerHTML);
-            if(helper.checkExistElement(currentPastValue))
+            if(WebUI.checkElementExist(currentPastValue))
             {
                 chosenElement= driver.findElement(currentPastValue);
                 actions.moveToElement(chosenElement).pause(Duration.ofSeconds(1)).click(chosenElement).build().perform();
@@ -136,6 +136,6 @@ public class PIMPage extends Menu{
             System.out.println("Can not get list item in Include");
     }
     public void ClickSearch() throws InterruptedException {
-        helper.clickElement(searchBtn);
+        WebUI.clickElement(searchBtn);
     }
 }

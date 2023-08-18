@@ -17,7 +17,7 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 
-public class WebUI {
+public class WebUI1 {
     private WebDriver driver;
     private WebDriverWait wait;
     private final Actions actions;
@@ -25,7 +25,7 @@ public class WebUI {
     private final int timeoutWait=10;
     private final int timeoutWaiForPageLoaded = 20;
     private JavascriptExecutor js;
-    public WebUI(WebDriver driver)
+    public WebUI1(WebDriver driver)
     {
         this.driver=driver;
         wait= new WebDriverWait(driver, Duration.ofSeconds(timeoutWait));

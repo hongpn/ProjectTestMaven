@@ -1,0 +1,12 @@
+[INFO ] 14-08-2023 14:06:04 [main] Log - Start testing Test
+[INFO ] 14-08-2023 14:06:04 [main] Log - Starting autotest
+[INFO ] 14-08-2023 14:06:15 [main] Log - SignInHRMPage test is starting...
+[INFO ] 14-08-2023 14:06:16 [main] Log - Starting SignInHRMPage
+[INFO ] 14-08-2023 14:06:17 [main] Log - Successful test case: SignInHRMPage
+[INFO ] 14-08-2023 14:06:17 [main] Log - SignInHRMPage test is passed.
+[INFO ] 14-08-2023 14:06:17 [main] Log - SearchEmployee test is starting...
+[INFO ] 14-08-2023 14:06:17 [main] Log - Starting SearchEmployee
+[INFO ] 14-08-2023 14:06:37 [main] Log - Successful test case: SearchEmployee
+[INFO ] 14-08-2023 14:06:37 [main] Log - SearchEmployee test is passed.
+[INFO ] 14-08-2023 14:06:39 [main] Log - Finish auto test
+[INFO ] 14-08-2023 14:06:39 [main] Log - End testing Test
